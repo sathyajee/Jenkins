@@ -4,6 +4,7 @@ pipeline {
         stage('Build') { 
             steps {
                 sh 'g++ -o output 1.cpp'
+                build job: 'PES1UG20CS686-1'
             }
         }
         stage('Test') { 
@@ -13,8 +14,8 @@ pipeline {
         }
         stage('Deploy') { 
             steps {
-                sh './output'
-//                 error 'Pipeline Failed' 
+//                 sh './output'
+                error 'Pipeline Failed' 
             }
         }
     }
